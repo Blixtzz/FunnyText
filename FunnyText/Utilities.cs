@@ -9,6 +9,7 @@ namespace FunnyText
 {
     public class Utilities
     {
+        private static UDPSender sender = new SharpOSC.UDPSender("127.0.0.1", 9000);
         public static void ToastModString(string dir)
         {
             dir = Directory.GetCurrentDirectory() + dir;
@@ -22,7 +23,7 @@ namespace FunnyText
         }
         public static void SendChatBox(string message)
         {
-            ToastOsc.OscMain.sender.Send(new OscMessage("/chatbox/input", message, true, true));
+            sender.Send(new OscMessage("/chatbox/input", message, true, true));
         }
     }
 }
