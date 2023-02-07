@@ -31,9 +31,6 @@ namespace FunnyText
                 {
                     Utilities.SendChatBox(isunmuted);
                 }
-
-
-
             }
         }
     }

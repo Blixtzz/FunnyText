@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Windows.Forms;
 using FunnyText;
+using System.Diagnostics;
 
 namespace ToastOsc
 {
     class OscMain
     {
+
         private static void Main(string[] args)
         {
-            Console.WriteLine("choose a chatbox\n1 = read from text file (\\ToastPackages\\YourFavoritePhrases.txt)\n2 = muted check (dont spam mute it rate limits you)");
+            Console.WriteLine("choose a chatbox\n1 = read from text file (\\ToastPackages\\YourFavoritePhrases.txt)\n2 = muted check (dont spam mute it rate limits you)\n3 = Spotify");
             string dir = Console.ReadLine();
             while (true)
             {
@@ -25,6 +27,9 @@ namespace ToastOsc
                         break;
 
                     case "2": VrcChecks.IsMuted();
+                        break;
+
+                    case "3": Utilities.SpotifySend();
                         break;
                 }
             }
